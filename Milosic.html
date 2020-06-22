@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sl">
+   <head>
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="Milosic.js"></script>
+      <meta charset="UTF-8">
+      <title>STOJ naloga</title>
+   </head>
+   <body>
+      <div class="container">
+         <h1>Najljubši filmi:</h1>
+         <div class="row">
+            <div class="col">
+               <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           seznam filmov
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="seznam">
+                              <a class="dropdown-item" href="#show1">film 1</a>
+                              <a class="dropdown-item" href="#show2">film 2</a>
+                              <a class="dropdown-item" href="#show3">film 3</a>
+                        </li>
+                        <li class="nav-item"> 
+                        <a class="nav-link" href="#addnew" id="prikazi">Add new</a>
+                        </li>
+                     </ul>
+                     </div >
+                     <div id="isci">
+                        <!--           <form class="form-inline my-2 my-lg-0">
+                           <input class="form-control mr-sm-2" type="search" placeholder="Isci po igralcu" aria-label="Search" id="beseda">
+                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="gumbIsci">Isci</button>
+                           </form> -->
+                     </div>
+               </nav>
+               </div>
+            </div>
+            <div class="row">
+               <section class="col-md" id="dodaj"></section>
+               <section class="col-md" id="sekcija2">
+                  <div>
+                     <p title="VnosniObrazec">Uspešno dodano</p>
+                  </div>
+               </section>
+               <aside class="col-md" >
+                 
+                 
+                 
+                  <table id="tabela" class="table  table-striped">
+                     <tr>
+                        <td>Kaj gledat? "Interstellar", "Črna zemlja"</td>
+                     </tr>
+                     <tr>
+                        <td>Katere Tv nanizanke se bodo ponovno vrtele in katere bodo preklicali?</td>
+                     </tr>
+                     <tr>
+                        <td>Čas za spremembo!Neverjetne Tv transformacije!</td>
+                     </tr>
+                     <tr>
+                        <td>Kaj gledat? "Interstellar", "Črna zemlja"</td>
+                     </tr>
+                     <tr>
+                        <td>Katere Tv nanizanke se bodo ponovno vrtele in katere bodo preklicali?</td>
+                     </tr>
+                     <tr>
+                        <td>Čas za spremembo!Neverjetne Tv transformacije!</td>
+                     </tr>
+                     <tr>
+                        <td>Kaj gledat? "Interstellar", "Črna zemlja"</td>
+                     </tr>
+                     <tr>
+                        <td>Katere Tv nanizanke se bodo ponovno vrtele in katere bodo preklicali?</td>
+                     </tr>
+                     <tr>
+                        <td>Čas za spremembo!Neverjetne Tv transformacije!</td>
+                     </tr>
+                     <tr>
+                        <td>Čas za spremembo!Neverjetne Tv transformacije!</td>
+                     </tr>
+                  </table>
+               </aside>
+            </div>
+            <footer class="text-center" class="row">&copy; Copyright 2019, IMDb.com Inc. Copyright &copy; 2019 BBC.</footer>
+         </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      </div>
+      <div class= "addnew">
+         <p id ="napaka" style="color:red;">Polja označena z * so obvezna </p>
+         <form class="form-group" id="addnew">
+            <fieldset>
+               <legend>Obrazec za vnos</legend>
+               Vnesi naslov nanizanke:*
+               <input id="naslov" class="form-control" type="text"  placeholder="Privzeti naslov..." required>
+               <p></p>
+               <div>Kratek opis:*</div>
+               <textarea id="opis" class="form-control" required ></textarea>
+               </br>
+               </br>Tip nanizanke:*
+               <select class="form-control">
+                  <option value="Akcija">Akcija</option>
+                  <option value="Komedija">Komedija</option>
+                  <option value="Drama">Drama</option>
+               </select>
+               Ocena
+               <input id="sliderValue" class="form-control-range" type="range" id="range" min="0" max="10" step="0.1">
+               <div id="testid"></div>
+               </br>Imena igralcev:
+               <textarea id="imenaIgralcev" class="form-control" required ></textarea>
+               </br>Dodaj sliko:
+               <input id="slika" class="form-control" type="text" placeholder="URL Slike..." required>
+               </br>
+               </br>Datum izida
+               <input class="form-control" type="date" min="1999-12-31" max="2019-05-01">
+         </form>
+         </fieldset> 
+      </div>
+   </body>
+</html>
